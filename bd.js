@@ -6,6 +6,7 @@ bd.transaction(function (criar) {
 function salvarNome() {
     const nomeUsuario = document.getElementById("nome-usuario").value;
 
+    
     bd.transaction(function (inserir) {
         inserir.executeSql("INSERT INTO formulario (nome) VALUES (?)", [
             nomeUsuario,

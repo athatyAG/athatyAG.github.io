@@ -4,7 +4,6 @@ function converteParaFahrenheit() {
     );
 
     const tempFahrenheit = tempCelsius * 1.8 + 32;
-
     document.getElementById("resultado-fahrenheit").value =
         tempFahrenheit.toFixed(2) + "Fahrenheit";
 }
