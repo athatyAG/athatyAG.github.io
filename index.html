@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Site Thaty.AG</title>
+
+        <script src="bd.js"></script>
+        <script src=" index.js"></script>
+        
+    </head>
+    <body>
+        <h1>OLA Mundo</h1>
+        <div>
+            <h3>Conversor Celsius >> Fahrenheit</h3>
+            <input
+                type="number"
+                placeholder="Temperatura em Celsius"
+                id="temperatura-celsius"
+            />
+            <input
+                type="button"
+                value="Converter !"
+                onclick="converteParaFahrenheit()"
+            />
+
+            <input type="text" id="resultado-fahrenheit" readonly >
+        </div><br>
+
+        <div>
+            <input type="text" id="nome-usuario" placeholder="Nome" >
+            <input type="button" value="salvar" onclick="salvarNome()" >
+        </div>
+    </body>
+</html>
