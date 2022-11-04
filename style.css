@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Creepster&family=Dancing+Script&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+header {
+    background: #05d4f8;
+    border: 5px solid #012247;
+    margin: 20px;
+    padding: 20px;
+    font-family: "Great Vibes", cursive;
+}
+
+header:hover {
+    background-color: aqua;
+    font-family: "Dancing Script", cursive;
+}
+
+main {
+    display: flex;
+    margin: 0px 50px;
+    flex-wrap: nowrap;
+}
+
+section {
+    background-color: rgb(64, 146, 146);
+    margin: 10px;
+    padding: 10px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    font-family: "Dancing Script", cursive;
+}
+input {
+    text-align: center;
+}
