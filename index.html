@@ -27,14 +27,19 @@
                     value="Converter !"
                     onclick="converteParaFahrenheit()"
                 />
-                <input type="text" id="resultado-fahrenheit" readonly />
+                <input
+                    type="text"
+                    id="resultado-fahrenheit"
+                    placeholder="Temperatura Fahrenheit"
+                    readonly
+                />
             </section>
 
             <section>
                 <h3>Banco de Dados</h3>
                 <input type="text" id="nome-usuario" placeholder="Nome" />
                 <input type="number" id="idade-usuario" placeholder="Idade" />
-                <input type="button" value="salvar" onclick="salvarInfo()" />
+                <input type="button" value="Salvar" onclick="salvarInfo()" />
             </section>
 
             <section>
@@ -47,16 +52,22 @@
                 />
                 <input
                     type="button"
-                    value="pesquisar"
+                    value="Pesquisar"
                     onclick="pesquisaPorNome()"
                 />
 
                 <input
                     type="text"
-                    id="resuldado-pesqusa "
+                    id="resuldado-pesquisa"
                     placeholder=" Resuldado Idade"
                     readonly
                 />
+            </section>
+
+            <section>
+                <h3>Exibe Banco de Dados</h3>
+                <input type="button" value="Exibir" onclick="exibeBD()"/>
+                <div id="lista-bd"> </div>
             </section>
         </main>
     </body>

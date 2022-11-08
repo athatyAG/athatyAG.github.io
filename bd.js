@@ -5,10 +5,17 @@ bd.transaction(function (criar) {
 });
 
 function salvarInfo() {
-    const nomeUsuario = document.getElementById("nome-usuario").value;
+    const nomeUsuario = document
+        .getElementById("nome-usuario")
+        .value.toUpperCase();
     const idadeUsuario = parseInt(
         document.getElementById("idade-usuario").value
     );
+
+    if (nomeUsuario === "" || isNaN(idadeUsuario)) {
+        alert("Faltam informaçoes!");
+        return false;
+    }
 
     bd.transaction(function (inserir) {
         inserir.executeSql(
@@ -17,18 +24,52 @@ function salvarInfo() {
         );
     });
     console.log(nomeUsuario, idadeUsuario);
+
+    document.getElementById("nome-usuario").value = "";
+    document.getElementById("idade-usuario").value = "";
 }
 
 function pesquisaPorNome() {
-    const nomeUsuario = document.getElementById("pesquisa-nome-usuario").value;
+    const nomeUsuario = document
+        .getElementById("pesquisa-nome-usuario")
+        .value.toUpperCase();
 
     bd.transaction(function (ler) {
         ler.executeSql(
-            `SELECT * FROM  formulario WHERE nome = "${nomeUsuario}"`,
+            `SELECT * FROM  formulario WHERE nome LIKE "%${nomeUsuario}%"`,
             [],
             function (ler, resultados) {
                 const tamanho = resultados.rows.length;
-                alert(tamanho);
+
+                const msg = tamanho + "linhas encontradas";
+                console.log(msg);
+
+                const nome = resultados.rows.item(tamanho - 1).nome;
+                const idade = resultados.rows.item(tamanho - 1).idade;
+                document.getElementById("pesquisa-nome-usuario").value = nome;
+                document.getElementById("resuldado-pesquisa").value = idade;
+            }
+        );
+    });
+}
+
+function exibeBD() {
+    bd.transaction(function (exibe) {
+        exibe.executeSql(
+            "SELECT * FROM formulario",
+            [],
+            function (exibe, resultados) {
+                const tamanho = resultados.rows.length;
+                let item;
+
+                document.getElementById("lista-bd").innerHTML = "";
+
+                for (let i = 0; i < tamanho; i++) {
+                    item = resultados.rows.item(i);
+                    document.getElementById(
+                        "lista-bd"
+                    ).innerHTML += `<p>Nome: ${item.idade} anos</p>`;
+                }
             }
         );
     });

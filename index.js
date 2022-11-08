@@ -7,3 +7,4 @@ function converteParaFahrenheit() {
     document.getElementById("resultado-fahrenheit").value =
         tempFahrenheit.toFixed(2) + "Fahrenheit";
 }
+
