@@ -4,9 +4,11 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Stick+No+Bills&display=swap");
+
 * {
-    margin: 0px;
-    padding: 0px;
+    margin: 10px;
+    padding: 10px;
 }
 
 header {
@@ -18,17 +20,17 @@ header {
 
     display: flex;
     justify-content: center;
-    
+    border-radius: 60px;
 }
 
 header:hover {
     background-color: aqua;
-    font-family: "Dancing Script", cursive;
+    font-family: "Stick No Bills", sans-serif;
 }
 
 main {
     display: flex;
-    margin: 0px 50px;
+    margin: 5px 50px;
     flex-wrap: nowrap;
 }
 
@@ -41,13 +43,20 @@ section {
     flex-direction: column;
     align-items: center;
     color: #0bf3f3;
-font-family: "Dancing Script", cursive;
+    font-family: "Dancing Script", cursive;
+    border: 3px solid #84c7db;
 }
 input {
     text-align: center;
-    border-radius: 5.5px;
-    color: #eb0f0f;
+    border-radius: 15.5px;
+    color: #0d055a;
     font-family: "Dancing Script", cursive;
-
+    width:150px
 }
 
+button {
+    color: rgb(189, 7, 7);
+    font-family: "Stick No Bills", sans-serif;
+    border-radius: 9px;
+    width:90px
+}

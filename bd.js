@@ -10,7 +10,9 @@ function salvarInfo() {
         .value.toUpperCase();
     const idadeUsuario = parseInt(
         document.getElementById("idade-usuario").value
-    );
+    )
+    
+    ;
 
     if (nomeUsuario === "" || isNaN(idadeUsuario)) {
         alert("Faltam informaçoes!");
@@ -68,9 +70,33 @@ function exibeBD() {
                     item = resultados.rows.item(i);
                     document.getElementById(
                         "lista-bd"
-                    ).innerHTML += `<p>Nome: ${item.idade} anos</p>`;
+                    ).innerHTML += `<p onclick="mostrarCartaoAltera('${item.nome}',${item.idade})"> Nome: ${item.nome}, ${item.idade} anos</p>`;
                 }
             }
         );
     });
+}
+
+function alteraInfo() {
+    const novoNome = document.getElementById("nome-alteraçao").value;
+    const novaIdade = parseInt(
+        document.getElementById("idade-alteraçao").value
+    );
+
+    bd.transaction(function (altera) {
+        altera.executeSql(
+            `UPDATE formulario SET nome= "${novoNome}",idade=${novaIdade} WHERE nome= "${nomeAtualParaEditar}" AND idade=${idadeAtualParaEditar}`
+        );
+    });
+    exibeBD();
+}
+
+function excluiInfo() {
+    bd.transaction(function (excluir) {
+        excluir.executeSql(
+            `DELETE FROM formulario WHERE nome="${nomeAtualParaEditar}" AND idade=${idadeAtualParaEditar}`
+        );
+    });
+
+    exibeBD();
 }

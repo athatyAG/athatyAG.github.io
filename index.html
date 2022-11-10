@@ -39,6 +39,11 @@
                 <h3>Banco de Dados</h3>
                 <input type="text" id="nome-usuario" placeholder="Nome" />
                 <input type="number" id="idade-usuario" placeholder="Idade" />
+                <input
+                    type="email"
+                    id="email-usuario"
+                    placeholder="E m a i l"
+                />
                 <input type="button" value="Salvar" onclick="salvarInfo()" />
             </section>
 
@@ -50,11 +55,6 @@
                     id="pesquisa-nome-usuario"
                     placeholder="Nome"
                 />
-                <input
-                    type="button"
-                    value="Pesquisar"
-                    onclick="pesquisaPorNome()"
-                />
 
                 <input
                     type="text"
@@ -62,12 +62,43 @@
                     placeholder=" Resuldado Idade"
                     readonly
                 />
+
+                <input
+                    type="email"
+                    id="email-usuario"
+                    placeholder="E m a i l"
+                />
+
+                <input
+                    type="button"
+                    value="Pesquisar"
+                    onclick="pesquisaPorNome()"
+                />
             </section>
 
             <section>
                 <h3>Exibe Banco de Dados</h3>
-                <input type="button" value="Exibir" onclick="exibeBD()"/>
-                <div id="lista-bd"> </div>
+                <input type="button" value="Exibir" onclick="exibeBD()" />
+                <div id="lista-bd"></div>
+            </section>
+
+            <section>
+                <h3>Altera BD</h3>
+                <input type=" text" id="nome-alteraçao" placeholder="Nome" />
+                <input
+                    type=" number"
+                    id="idade-alteraçao"
+                    placeholder="Idade"
+                />
+
+                <input
+                    type="email"
+                    id="email-usuario"
+                    placeholder="E m a i l"
+                />
+
+                <button onclick="alteraInfo()">Alterar</button>
+                <button onclick="excluiInfo()">Excluir</button>
             </section>
         </main>
     </body>
